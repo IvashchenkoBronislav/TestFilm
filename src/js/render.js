@@ -153,7 +153,7 @@ function renderEliment (obj){
     content.innerHTML += htmlElementCase;
 
     arry.map((i=>{
-        document.querySelector('.commet__case').innerHTML += `<span>${i}</span>`
+        document.querySelector(`.comm${obj.id}`).innerHTML += `<span>${i}</span>`
     }));
 
     const addCommentButton = document.querySelectorAll('.comment_add');
