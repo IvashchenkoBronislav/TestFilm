@@ -1,0 +1,6 @@
+import '../scss/main.scss'
+import '../scss/font.scss'
+import '../scss/header.scss'
+import '../font-awesom/all.css'
+import '../scss/content.scss'
+import '../scss/filmLabrary.scss'

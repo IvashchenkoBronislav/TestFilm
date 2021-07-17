@@ -1,0 +1,68 @@
+.header{
+    display: flex;
+    width: 100%;
+    height: 130px;
+    background: #6fcdff;
+};
+
+.header__logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:365px;
+    background: #51afe1;
+
+    span{
+        display: block;
+        font-family: Montserrat Regular;
+        font-size: 300%;
+        color: #ffffff;
+        text-align: center;
+    };
+};
+
+.header__add_film{
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+
+    button{
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border-color: transparent;
+        font-size: 22px;
+        text-align: center;
+        color: #a9e1ff;
+        cursor: pointer;
+        outline: none;
+        padding:20px 0 ;
+        i{
+            color:white;
+            font-size: 32px;
+        };
+
+        span{
+            display: block;
+            margin-left: 15px;
+        };
+    };
+
+    button:hover{
+        color:white;
+    };
+};
+
+.anim_button_on{
+    animation: anim_cercle linear 0.5s;
+};
+
+@keyframes anim_cercle {
+    0%{
+
+    };
+    100%{
+        transform: rotate(360deg)
+    };
+};
