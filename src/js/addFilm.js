@@ -21,69 +21,82 @@ addFilm.addEventListener("click", ()=>{
 
     const fix = arry.film;
     const infoFilm={};
+
+    let everythingFull = false
   
 
     if(inputTitul.value.length >= 3){
         infoFilm.titul = inputTitul.value;
-        
-        if(inputYear.value.length === 4){
-            infoFilm.year = inputYear.value;
-
-            if(inputCountry.value.length >= 3){
-                infoFilm.country = inputCountry.value;
-
-                if(inputGenre.value.length >0 ){
-                    infoFilm.genre = inputGenre.value;
-                    
-                    if(inputPoster.value.length >0 ){
-                        infoFilm.poster = inputPoster.value;
-
-                        if(inputActors.value.length >0 ){
-                            infoFilm.acters = inputActors.value;
-
-                            if(inputDescription.value.length >0 ){
-                                infoFilm.description = inputDescription.value;
-                                infoFilm.id = arry.film.length;
-                                infoFilm.comment = [];
-                                fix[infoFilm.id] = infoFilm;
-                                console.log()
-                                localStorage.setItem("film",JSON.stringify(arry))
-                                modailOff.classList.toggle('off_modail');
-                                modailOff.classList.toggle('on_modail');
-                                startRender();
-                                
-                            }else{
-                                inputDescription.placeholder = "You didn’t tell the DESCRIPTION of the movie";
-                                inputDescription.value = "";
-                            };
-
-                        }else{
-                            inputActors.placeholder = "You did not enter the names of the Actors";
-                            inputActors.value = "";
-                        };
-
-                    }else{
-                        inputPoster.placeholder = "You have not entered a Poster";
-                        inputPoster.value = "";
-                    };
-                    
-                }else{
-                    inputGenre.placeholder = "You have not entered a Genre";
-                    inputGenre.value = "";
-                };
-
-            }else{
-                inputCountry.placeholder = "You have not entered the name of the Country";
-                inputCountry.value = "";
-            };
-
-        }else{
-            inputYear.placeholder = "The Year is not correct";
-            inputYear.value = "";
-        };
+        everythingFull = true
     }else{
         inputTitul.placeholder = "Title name is too short";
         inputTitul.value = "";
+        everythingFull = false
     };
 
+    if(inputYear.value.length === 4){
+        infoFilm.year = inputYear.value;
+        everythingFull = true
+    }else{
+        inputYear.placeholder = "The Year is not correct";
+        inputYear.value = "";
+        everythingFull = false
+    };
+
+    if(inputCountry.value.length >= 3){
+        infoFilm.country = inputCountry.value;
+        everythingFull = true
+    }else{
+        inputCountry.placeholder = "You have not entered the name of the Country";
+        inputCountry.value = "";
+        everythingFull = false
+    };
+
+    if(inputGenre.value.length >0 ){
+        infoFilm.genre = inputGenre.value;
+        everythingFull = true
+    }else{
+        inputGenre.placeholder = "You have not entered a Genre";
+        inputGenre.value = "";
+        everythingFull = false
+    };
+
+    if(inputPoster.value.length >0 ){
+        infoFilm.poster = inputPoster.value;
+        everythingFull = true
+    }else{
+        inputPoster.placeholder = "You have not entered a Poster";
+        inputPoster.value = "";
+        everythingFull = false
+    };
+
+    if(inputActors.value.length >0 ){
+        infoFilm.acters = inputActors.value;
+        everythingFull = true
+    }else{
+        inputActors.placeholder = "You did not enter the names of the Actors";
+        inputActors.value = "";
+        everythingFull = false
+    };
+
+    if(inputDescription.value.length >0 ){
+        infoFilm.description = inputDescription.value;
+        everythingFull = true      
+    }else{
+        inputDescription.placeholder = "You didn’t tell the DESCRIPTION of the movie";
+        inputDescription.value = "";
+        everythingFull = false
+    };
+
+    if(everythingFull != false){
+        infoFilm.id = arry.film.length;
+        infoFilm.comment = [];
+        fix[infoFilm.id] = infoFilm;
+        localStorage.setItem("film",JSON.stringify(arry))
+        modailOff.classList.toggle('off_modail');
+        modailOff.classList.toggle('on_modail');
+        startRender();
+    }else{
+        
+    }
 })
