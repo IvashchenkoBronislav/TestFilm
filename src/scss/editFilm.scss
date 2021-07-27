@@ -11,8 +11,12 @@
     .content__add_film_modail__case{
         flex-direction: row;
         justify-content: space-around;
+        flex-wrap: wrap;
 
         div{
+            display: flex;
+            flex-direction: column;
+
             input{
                 width: 100%;
             }

@@ -248,21 +248,49 @@
     }    
 }
 
+@media (max-width:950px){
+    .content__add_film_modail__case{
+        flex-direction: column;
+    }
+
+    
+
+}
+
 @media (max-width:800px){
     .content__add_film_modail__case{
         align-items: center;
+        margin: 25px auto;
         padding: 0;
+        span{
+            text-align: center;
+        }
 
         input{
-            width: 90%;
+            width: 90% !important;
+            margin: 0 auto;
         }
         textarea{
-            width: 90%;
+            width: 90% !important;
+            margin: 0 auto;
+
         }
         
     }
     .button_case{
         margin: 29px auto;
+        flex-wrap: wrap;
     }
 }
 
+
+@media (max-width:500px){
+    .button_case{
+        flex-direction: column-reverse;
+        width: auto;
+        
+        button{
+            margin-top: 10px;
+        }
+    }
+}
