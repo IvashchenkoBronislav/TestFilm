@@ -3,14 +3,13 @@
     overflow:  hidden;
     width: 1170px;
     border:0px solid transparent;
-    margin-top: 50px;
     -moz-background-size: 100%;
     -webkit-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
     background: no-repeat;
     filter: blur(10px); 
-    position: relative;
+    position: absolute;
     z-index: 0;
     object-fit: cover;
 };
@@ -19,13 +18,15 @@
     position: relative;
 };
 
+
+
 .case_film{
     display: flex;
     flex-direction: row;
     width: 960px;
     height: 540px;
     margin: 80px 100px;
-    position: absolute;
+    position: relative;
     z-index: 2;
     color:white;
     top: 50px;
@@ -108,3 +109,32 @@
     position: relative;
     bottom: 0;
 };
+
+
+@media (max-width:1500px){
+    .content__film_labr{
+        width: 90%;
+    }
+    .case_film{
+        width: 90%;
+        height: 100%;
+    }
+
+    .bg_labr{
+        width: 100%;
+        
+    }   
+}
+
+@media (max-width: 500px){
+    .case_film__info{
+        margin-left: 0;
+
+        
+    }
+
+    .case_film__poster{
+        width: 100%;
+        height: 100%;
+    }
+}
