@@ -248,5 +248,21 @@
     }    
 }
 
+@media (max-width:800px){
+    .content__add_film_modail__case{
+        align-items: center;
+        padding: 0;
 
+        input{
+            width: 90%;
+        }
+        textarea{
+            width: 90%;
+        }
+        
+    }
+    .button_case{
+        margin: 29px auto;
+    }
+}
 
