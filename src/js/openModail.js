@@ -6,18 +6,19 @@ const simbyl = document.querySelector('.simbyl');
 const cencel = document.querySelector('.cencel');
 
 
-
-
-cencel.addEventListener('click',()=>{
+function openClose(){
     modailOff.classList.toggle('off_modail');
     modailOff.classList.toggle('on_modail');
+}
+
+cencel.addEventListener('click',()=>{
+    openClose()
 });
 
 
 
 button_modail_on.addEventListener('click',()=>{
-    modailOff.classList.toggle('off_modail');
-    modailOff.classList.toggle('on_modail');
+    openClose()
 });
 
 
@@ -27,3 +28,11 @@ button_modail_on.addEventListener('mouseenter',()=>{
         simbyl.classList.toggle('anim_button_on');
     }, 1000);
 });
+
+function openEditModail(el){
+    el.addEventListener('click', ()=>{
+        console.log("работает")
+    })
+}
+
+export default openEditModail

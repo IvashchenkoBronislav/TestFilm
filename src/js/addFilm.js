@@ -10,20 +10,14 @@ const inputActors = document.querySelector("#input_actors");
 const inputDescription = document.querySelector("#input_description");
 const addFilm = document.getElementById("add_film");
 const modailOff = document.querySelector('.off_modail');
-
+const infoFilm={};
 
 
 //=======add new Film
 
-addFilm.addEventListener("click", ()=>{ 
-    
-    const arry = JSON.parse(localStorage.getItem("film"));
-
-    const fix = arry.film;
-    const infoFilm={};
-
+const addFilmFanction = ()=>{
     let everythingFull = false
-  
+    
 
     if(inputTitul.value.length >= 3){
         infoFilm.titul = inputTitul.value;
@@ -89,6 +83,19 @@ addFilm.addEventListener("click", ()=>{
     };
 
     if(everythingFull != false){
+        const arry = JSON.parse(localStorage.getItem("film"));
+        const fix = arry.film;
+
+        inputTitul.value = '';
+        inputYear.value = '';
+        inputCountry.value = '';
+        inputGenre.value = '';
+        inputPoster.value = '';
+        inputActors.value = '';
+        inputDescription.value = '';
+
+        
+
         infoFilm.id = arry.film.length;
         infoFilm.comment = [];
         fix[infoFilm.id] = infoFilm;
@@ -96,7 +103,15 @@ addFilm.addEventListener("click", ()=>{
         modailOff.classList.toggle('off_modail');
         modailOff.classList.toggle('on_modail');
         startRender();
+
+        
     }else{
         
     }
+};
+
+addFilm.addEventListener("click", ()=>{ 
+    addFilmFanction()
 })
+
+
