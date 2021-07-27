@@ -101,10 +101,9 @@ const startRender = () =>{
             if(allDel[i]){
                 //== del film
                 allDel[i].addEventListener("click",(event)=>{ 
-                    
                     arry.film.splice(i ,1);
                     localStorage.setItem("film",JSON.stringify(arry));
-                    document.getElementById(`${event.toElement.id}`).remove();                    
+                    startRender();
                 });
             };
 
@@ -112,10 +111,10 @@ const startRender = () =>{
             if(allCommentEl[i]){
                 allCommentEl[i].addEventListener("click",(event)=>{
                     if(event.path.length === 10){
-                        const id = event.toElement.id;
-                        document.querySelector(`.c${id}>span>i`).classList.toggle("comment_on");
-                        document.querySelector(`.comm${id}`).classList.toggle("off");
-                        document.querySelector(`.add_comm${id}`).classList.toggle("off"); 
+                        
+                        document.querySelector(`.c${i}>span>i`).classList.toggle("comment_on");
+                        document.querySelector(`.comm${i}`).classList.toggle("off");
+                        document.querySelector(`.add_comm${i}`).classList.toggle("off"); 
                     }    
                 });
             };
