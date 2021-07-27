@@ -1,0 +1,27 @@
+.modail_edit{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // top: ;
+    background: white;
+    color:black;
+    // margin: 0 10%;
+    z-index: 999 ;
+    border-radius: 10px;
+
+    .content__add_film_modail__case{
+        flex-direction: row;
+        justify-content: space-around;
+
+        div{
+            input{
+                width: 100%;
+            }
+
+            textarea{
+                width: 100%;
+            }
+        }
+    }
+}
