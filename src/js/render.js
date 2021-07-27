@@ -199,13 +199,14 @@ if(localStorage!=null){
 }
 
 
-
+{/* <img src="${obj.poster}" alt="" class="bg_labr"></img> */}
 function renderEliment (obj){
 
     let arry = obj.comment;
 
     console.log(arry);
     const htmlElementCase = `
+<<<<<<< Updated upstream
         <div id='${obj.id}' class="relative">
             <img src="${obj.poster}" alt="" class="bg_labr">
             <div class="case_film">
@@ -237,6 +238,10 @@ function renderEliment (obj){
                             <button class="button add" id="edit_film${obj.id}">Edit</button>
                         </div>
                     </div>
+=======
+        
+            <div class="case_film" id='${obj.id}'>
+>>>>>>> Stashed changes
                 <img class="case_film__poster" src="${obj.poster}" alt="" class="poster">
                 <div class="case_film__info">
                     <div class="case_film__info__titul">
@@ -268,19 +273,20 @@ function renderEliment (obj){
                         <button id="${obj.id}"class="button edit">Edit</button>
                     </div>
                 </div>
-                
-            </div>
-            <div class="comment c${obj.id} " id="${obj.id}" >
-                <span id="${obj.id}">Comment: ${obj.comment.length} <i class="fas fa-angle-down"></i> </span>
-                <div class="commet__case comm${obj.id} off">
+                <div class="comment c${obj.id} " id="${obj.id}" >
+                    <span id="${obj.id}">Comment: ${obj.comment.length} <i class="fas fa-angle-down"></i> </span>
+                    <div class="commet__case comm${obj.id} off">
+                        <div class="add_comment_case add_comm${obj.id} off">
+                            <input type="text" id='inputComm${obj.id}' placeholder="Add yor comment">
+                            <button class="comment_add button" id="${obj.id}">Add</button>
+                        </div>
+                    </div>
                     
                 </div>
-                <div class="add_comment_case add_comm${obj.id} off">
-                    <input type="text" id='inputComm${obj.id}' placeholder="Add yor comment">
-                    <button class="comment_add button" id="${obj.id}">Add</button>
-                </div>
+                
             </div>
-        </div>   
+            
+       
     `;
 
     content.innerHTML += htmlElementCase;
